@@ -14,7 +14,7 @@ class AudioEnumerator : public QObject
 
 public:
     AudioEnumerator();
-	~AudioEnumerator();
+    ~AudioEnumerator();
 
 private:
     QAudioFormat formatIn;
@@ -32,7 +32,7 @@ private:
     QAudioDeviceInfo deviceIn;
     QAudioDeviceInfo deviceOut;
 
-	void dumpAudioDeviceInfo(const QAudioDeviceInfo &deviceInfo);
+    void dumpAudioDeviceInfo(const QAudioDeviceInfo &deviceInfo);
     void getFormat();
     void createAudioInput();
     void createAudioOutput();
