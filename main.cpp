@@ -6,11 +6,11 @@
  */
 
 #include <QCoreApplication>
-#include "MyAudioRecorder.hpp"
+#include "AudioEnumerator.hpp"
 
 int main(int argc, char *argv[])
 {
 	QCoreApplication a(argc, argv);
-	MyAudioRecorder recorder;
+	AudioEnumerator recorder;
 	return a.exec();
 }

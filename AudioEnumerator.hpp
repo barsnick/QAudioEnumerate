@@ -1,5 +1,5 @@
-#ifndef MYAUDIORECORDER_HPP
-#define MYAUDIORECORDER_HPP
+#ifndef AUDIOENUMERTOR_HPP
+#define AUDIOENUMERTOR_HPP
 
 #include <QAudioFormat>
 #include <QAudioDeviceInfo>
@@ -8,13 +8,13 @@
 #include <QAudioOutput>
 #include <QObject>
 
-class MyAudioRecorder : public QObject
+class AudioEnumerator : public QObject
 {
     Q_OBJECT
 
 public:
-    MyAudioRecorder();
-	~MyAudioRecorder();
+    AudioEnumerator();
+	~AudioEnumerator();
 
 private:
     QAudioFormat formatIn;
@@ -39,4 +39,4 @@ private:
     void beginAudio();
 };
 
-#endif // MYAUDIORECORDER_HPP
+#endif // AUDIOENUMERTOR_HPP

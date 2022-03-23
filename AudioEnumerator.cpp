@@ -1,6 +1,6 @@
-#include "MyAudioRecorder.hpp"
+#include "AudioEnumerator.hpp"
 
-MyAudioRecorder::MyAudioRecorder() {
+AudioEnumerator::AudioEnumerator() {
 	QTextStream(stdout) << "running" << endl;
 	getFormat();
     createAudioInput();
@@ -8,12 +8,12 @@ MyAudioRecorder::MyAudioRecorder() {
 	QTextStream(stdout) << "initialized" << endl;
 }
 
-MyAudioRecorder::~MyAudioRecorder() {
+AudioEnumerator::~AudioEnumerator() {
 	delete m_audioInput;
 	delete m_audioOutput;
 }
 
-void MyAudioRecorder::dumpAudioDeviceInfo(const QAudioDeviceInfo &deviceInfo) {
+void AudioEnumerator::dumpAudioDeviceInfo(const QAudioDeviceInfo &deviceInfo) {
 	QTextStream out(stdout);
 	// QStringList stringList;
 
@@ -40,7 +40,7 @@ void MyAudioRecorder::dumpAudioDeviceInfo(const QAudioDeviceInfo &deviceInfo) {
 	out << endl;
 }
 
-void MyAudioRecorder::getFormat() {
+void AudioEnumerator::getFormat() {
     formatIn.setSampleSize(8);
     formatIn.setCodec("audio/pcm");
     formatIn.setByteOrder(QAudioFormat::LittleEndian);
@@ -80,15 +80,15 @@ void MyAudioRecorder::getFormat() {
 }
 
 
-void MyAudioRecorder::createAudioInput() {
+void AudioEnumerator::createAudioInput() {
     m_audioInput = new QAudioInput(m_InputDevice, formatIn);
 }
 
-void MyAudioRecorder::createAudioOutput() {
+void AudioEnumerator::createAudioOutput() {
     m_audioOutput = new QAudioOutput(m_OutputDevice, formatOut);
 }
 
-void MyAudioRecorder::beginAudio() {
+void AudioEnumerator::beginAudio() {
     m_output = m_audioOutput->start();
     m_input = m_audioInput->start();
 }
